@@ -129,7 +129,7 @@ function game_play(){
         }
     }
     else {
-        prompt(`It was a Tie, You won ${player_win_tally} rounds, Computer won ${computer_win_tally} rounds`,  "Press Okay to Finish")
+        prompt(`It was a Tie, You won ${player_win_tally} rounds, Computer won ${computer_win_tally} rounds, There was ${draw_counter} draw-matches`,  "Press Okay to Finish")
     }
 
     console.log(`Player score : ${player_win_tally}`);
