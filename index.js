@@ -46,6 +46,7 @@ function game_logic(){
                     message = "you win this round";
                     player_win_tally++;
                 }
+                
                 break;
             
             case 'paper':
