@@ -46,7 +46,7 @@ function game_logic(){
                     message = "you win this round";
                     player_win_tally++;
                 }
-                
+
                 break;
             
             case 'paper':
@@ -69,6 +69,7 @@ function game_logic(){
                     message = "You lose this round";
                     computer_win_tally++
                 }
+                
                 break;
 
             case 'scissor':
