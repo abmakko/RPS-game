@@ -30,19 +30,19 @@ function game_logic(){
                 player_option = 1;
                 if(computerChoice === 1 && player_option === 1){
                     computer_option = "rock";
-                    prompt(`Computer choose ${computer_option} That was a draw`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! That was a draw`, "Press Okay to continue");
                     message = "This is a draw";
                     draw_counter++;
                 }
                 else if (computerChoice === 2){
                     computer_option = "paper";
-                    prompt(`Computer choose ${computer_option} You lost that round, Press Okay to continue`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! You lost that round, Press Okay to continue`, "Press Okay to continue");
                     message = "You lose";
                     computer_win_tally++;
                 }
                 else if(computerChoice === 3){
                     computer_option = "scissor";
-                    prompt(`Computer choose ${computer_option} You won that round, Press Okay to continue`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! You won that round, Press Okay to continue`, "Press Okay to continue");
                     message = "you win this round";
                     player_win_tally++;
                 }
@@ -53,48 +53,48 @@ function game_logic(){
                 player_option = 2;
                 if(computerChoice === 2 && player_option === 2){
                     computer_option = "paper";
-                    prompt(`Computer choose ${computer_option} That was a draw, Press Okay to continue`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! That was a draw, Press Okay to continue`, "Press Okay to continue");
                     message = "This is a draw";
                     draw_counter++;
                 }
                 else if(computerChoice === 1){
                     computer_option = "rock";
-                    prompt(`Computer choose ${computer_option} You won that round, Press Okay to continue`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! You won that round, Press Okay to continue`, "Press Okay to continue");
                     message = "You win this round";
                     player_win_tally++;
                 }
                 else if(computerChoice === 3){
                     computer_option = "scissor";
-                    prompt(`Computer choose ${computer_option} You lost that round press okay continue`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! You lost that Round! press okay continue`, "Press Okay to continue");
                     message = "You lose this round";
                     computer_win_tally++
                 }
-                
+
                 break;
 
             case 'scissor':
                 player_option = 3;
                 if(computerChoice === 3 && player_option === 3){
-                    prompt(`Computer choose ${computer_option} That was a draw`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! That was a draw`, "Press Okay to continue");
                     computer_option = "scissor";
                     message = "This is a draw";
                     draw_counter++;
                 }
                 else if (computerChoice === 1){
                     computer_option = "rock";
-                    prompt(`Computer choose ${computer_option} You lost that round, Press Okay to continue`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! You lost that round, Press Okay to continue`, "Press Okay to continue");
                     message = "You lose this round";
                     computer_win_tally++;
                 }
                 else if(computerChoice === 2){
                     computer_option = "paper";
-                    prompt(`Computer choose ${computer_option} You won that round, Press Okay to continue`, "Press Okay to continue");
+                    prompt(`Computer choose ${computer_option}! You won that round, Press Okay to continue`, "Press Okay to continue");
                     message = "You win this round";
                     player_win_tally++;
                 }
                 break;
 
-            default: {console.log("something seriously went wrong");}
+            default: {prompt("something seriously went wrong");}
         }
 }
 
