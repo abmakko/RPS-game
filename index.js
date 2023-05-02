@@ -15,7 +15,7 @@ let computerChoice = Math.floor(Math.random() * 3) + 1;
 
 function game_logic(){    
 
-        while((player_choice !== "rock") && (player_choice !== "paper") && (player_choice !== "scissor")){
+        while((player_choice !== "rock") && (player_choice !== "paper") && (player_choice !== "scissor") && (player_choice !== "scissors")){
             player_choice = prompt(`Rock, paper, scissor, This a Round Number ${count}, Please enter the appropriate Options`);
             player_choice = player_choice.toLowerCase();
             player_choice = String(player_choice);
@@ -49,6 +49,7 @@ function game_logic(){
 
                 break;
             
+            case 'papper':
             case 'paper':
                 player_option = 2;
                 if(computerChoice === 2 && player_option === 2){
@@ -72,11 +73,12 @@ function game_logic(){
 
                 break;
 
+            case 'scissors':
             case 'scissor':
                 player_option = 3;
                 if(computerChoice === 3 && player_option === 3){
-                    prompt(`Computer choose ${computer_option}! That was a draw`, "Press Okay to continue");
                     computer_option = "scissor";
+                    prompt(`Computer choose ${computer_option}! That was a draw`, "Press Okay to continue");                    
                     message = "This is a draw";
                     draw_counter++;
                 }
