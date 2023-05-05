@@ -1,0 +1,265 @@
+body{
+    position:relative;
+    background-color: black;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    width:auto;  
+    height: auto; 
+    padding: 3em;
+    margin: auto;
+    
+}
+
+.outer-container{
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+    min-width: 700px;
+    margin: auto;
+    position:relative;
+    width:auto;  
+    height: auto; 
+    flex-basis: 80%;
+}
+
+
+.outer-1{
+    
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    border-color: #40f000;
+    border-width: 0.5em;
+    border-style: groove;
+    min-height: 500px;
+    min-width: 300px;
+    height: auto;
+    flex-basis: 100%;
+}
+
+                                    /*---SCORE-BOARD PROPERTIES*/
+
+.score-board{
+    position: absolute;
+    border-color: #40f000;
+    border-width: 0.3em;
+    border-style: solid;
+    left: 0; 
+    right: 0;
+    top:-40px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 150px;
+    height: 70px;
+    background-color: black;
+    z-index: 1;
+}
+
+                    /*----PLAYER HAND DISPLAY-----*/
+
+.player-hand-left{
+    margin: 1em;
+    display: flex;
+    height: 60%;
+    position: absolute;
+    border-color: #40f000;
+    border-width: 0.4em;
+    border-style: outset;
+    left: -100px;
+    width: 300px;
+    min-width: 100px;
+    min-height: 100px;
+       
+    
+    background-color: black;
+    z-index: 1;
+
+}
+
+
+
+.player-hand-right{
+    margin: 1em;
+    display: flex;
+    height: 60%;
+    position: absolute;
+    border-color: #40f000;
+    border-width: 0.4em;
+    border-style: outset;
+    right: -100px;
+    min-width: 100px;
+    min-height: 100px;
+    width: 300px;
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: black;
+    z-index: 1;
+
+}
+
+                     /*----Player LEFT IMAGES----*/
+#rock-left{
+    background: url("./images/rock-left.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    margin: auto;
+    height: 70%;   
+    width: 80%;         
+    display: none;
+    z-index: 3;
+}
+
+#paper-left{
+    background: url("./images/paper-left.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    margin: auto;
+    height: 90%;   
+    width: 80%;         
+    display: none;
+    z-index: 3;
+}
+
+#scissor-left{
+    background: url("./images/scissor-left.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    margin: auto;
+    height: 90%;   
+    width: 80%;         
+    display: none;
+    z-index: 3;
+}
+
+                                /*----COMPUTER RIGHT-HAND IMAGES----*/
+
+#rock-right{
+    background: url("./images/rock-right.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    margin: auto;
+    height: 70%;   
+    width: 80%;         
+    display: block;
+    z-index: 3;
+}
+
+#paper-right{
+    background: url("./images/paper-right.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    margin: auto;
+    height: 90%;   
+    width: 80%;         
+    display: none;
+    z-index: 3;
+}
+
+#scissor-right{
+    background: url("./images/scissor-right.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    margin: auto;
+    height: 90%;   
+    width: 80%;         
+    display: none;
+    z-index: 3;
+}
+
+
+                                /*----Middle Prompt message Properties----*/
+.prompt{
+    
+    display: flex;
+    border-color: #40f000;
+    border-width: 0.3em;
+    border-style: solid;   
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin-left: auto; 
+    margin-right: auto; 
+    min-width: 100px;
+    min-height: 90px;
+    
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    min-width: 280px;
+}
+
+
+/*----Media querries----*/
+
+@media screen and (max-height:740px) {
+    .outer-container > .outer-1{
+        height: 500px;
+        flex-basis: 0;
+    }
+
+    /* .outer-1 > .score-board {    
+        
+    } */
+
+    .outer-1 .prompt{
+        height: 90px;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    .buttons{
+        display: flex;
+        align-items: center;
+        width: 300px;
+        height: 50px;
+        margin: 0;
+    }
+
+    .score-board{
+        position: relative;
+        top: -50px;
+    }
+
+   
+    body{
+        
+        min-height: 500px;
+    }
+
+    .outer-container{
+        min-width: 280px;
+        min-height: 500px;
+        align-items: center;
+    }
+    
+    .hands{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        
+        left: 0;
+        margin: auto;
+        right: 0;
+        
+    }
+
+    .outer-1{
+        min-width: 280px;
+        min-height: 300px;
+        flex-direction: column;
+        min-height: 500px;
+        gap: 1em;
+        padding: 1em;
+        border-width: 0.2;
+        padding-bottom: 3em;
+        height: 700px;
+    }    
+}

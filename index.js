@@ -138,4 +138,4 @@ function game_play(){
     console.log(`Computer score : ${computer_win_tally}`);
 }
 
-game_play();
+//game_play();

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="800px" height="800px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" fill="#f7f8f7" stroke="#f7f8f7" xmlns="http://www.w3.org/2000/svg">
+  <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+  <g id="SVGRepo_iconCarrier" transform="matrix(0, 1, 1, 0, 0.003674, -0.003674)">
+    <defs>
+      <style>.cls-1{fill:none;stroke:#40f000;stroke-miterlimit:10;stroke-width:1.89px;}</style>
+    </defs>
+    <path class="cls-1" d="M 11.586 22.414 L 6.76 22.32 C 4.673 20.233 3.5 17.402 3.5 14.45 C 3.493 13.156 4.005 11.914 4.92 11 C 5.83 10.102 7.062 9.605 8.34 9.62 L 10.11 9.62 C 11.15 9.62 11.994 10.46 12 11.5 C 12 12.544 11.154 13.39 10.11 13.39 L 7.28 13.39"/>
+    <path class="cls-1" d="M7.28,13.39l.34.14A7,7,0,0,1,12,20h0"/>
+    <path class="cls-1" d="M 11.442 22.405 C 21.118 22.449 20.5 17.402 20.5 14.45"/>
+    <path class="cls-1" d="M6,9.62,4.84,3.38A1.9,1.9,0,0,1,6.37,1.19a1.84,1.84,0,0,1,.33,0A1.89,1.89,0,0,1,8.56,2.73l1.23,7"/>
+    <path class="cls-1" d="M10.37,10.05l1.29-7.32a1.89,1.89,0,0,1,1.86-1.57,1.84,1.84,0,0,1,.33,0,1.9,1.9,0,0,1,1.53,2.19L14.26,9.71"/>
+    <rect class="cls-1" x="12.94" y="9.62" width="3.78" height="6.61" rx="1.89"/>
+    <rect class="cls-1" x="16.72" y="10.56" width="3.78" height="5.67" rx="1.89"/>
+  </g>
+</svg>
