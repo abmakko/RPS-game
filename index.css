@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body{
     position:relative;
     background-color: black;
     display: flex;
-    
+    font-family: 'VT323', monospace;
     align-items: center;
     justify-content: center;
     width:auto;  
@@ -15,7 +17,7 @@ body{
 .outer-container{
     display: flex;
     flex-direction: column;
-   
+    gap: 0;
     justify-content: center;
     min-width: 700px;
     margin: auto;
@@ -34,10 +36,20 @@ body{
     justify-content: center;
     border-color: #40f000;
     border-width: 0.5em;
-    border-style: groove;
+    border-style: inset;
     min-height: 500px;
     min-width: 300px;
     height: auto;
+    box-shadow:
+    
+	  inset #91d877 0 0 0 5px, 
+    inset #b6eea1 0 0 0 1px, 
+    inset #98f078 0 0 0 10px, 
+    inset #aff197 0 0 0 11px, 
+    inset #abf390 0 0 0 16px, 
+    inset #8ee071 0 0 0 17px, 
+    inset #cafab9 0 0 0 21px, 
+    inset #54ee1c 0 0 30px 20px;
     flex-basis: 100%;
 }
 
@@ -45,18 +57,32 @@ body{
 
 .score-board{
     position: absolute;
-    border-color: #40f000;
-    border-width: 0.3em;
-    border-style: solid;
+    border-color: #c6f8b4;
+    border-width: 0.2em;
+    border-style:solid;
+    box-shadow:
+	  inset #91d877 0 0 0 5px, 
+    inset #b6eea1 0 0 0 1px, 
+    inset #54ee1c 0 0 30px 10px;
     left: 0; 
     right: 0;
-    top:-40px; 
+    top:-30px; 
     margin-left: auto; 
     margin-right: auto; 
     width: 150px;
     height: 70px;
     background-color: black;
     z-index: 1;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    margin: auto;
+    color: #40f000;
+    text-align: center;
 }
 
                     /*----PLAYER HAND DISPLAY-----*/
@@ -68,12 +94,15 @@ body{
     position: absolute;
     border-color: #40f000;
     border-width: 0.4em;
-    border-style: outset;
+    border-style: solid;
     left: -100px;
     width: 300px;
     min-width: 100px;
     min-height: 100px;
-       
+    box-shadow:
+    inset #91d877 0 0 0 5px, 
+    inset #b6eea1 0 0 0 1px, 
+    inset #54ee1c 0 0 30px 10px;
     
     background-color: black;
     z-index: 1;
@@ -88,8 +117,12 @@ body{
     height: 60%;
     position: absolute;
     border-color: #40f000;
+    box-shadow:
+    inset #91d877 0 0 0 5px, 
+    inset #b6eea1 0 0 0 1px, 
+    inset #54ee1c 0 0 30px 10px;
     border-width: 0.4em;
-    border-style: outset;
+    border-style: solid;
     right: -100px;
     min-width: 100px;
     min-height: 100px;
@@ -144,7 +177,8 @@ body{
     margin: auto;
     height: 70%;   
     width: 80%;         
-    display: block;
+    display: none;
+    
     z-index: 3;
 }
 
@@ -170,6 +204,24 @@ body{
     z-index: 3;
 }
 
+.player-tag { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.computer-tag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
 
                                 /*----Middle Prompt message Properties----*/
 .prompt{
@@ -184,25 +236,121 @@ body{
     margin-left: auto; 
     margin-right: auto; 
     min-width: 100px;
-    min-height: 90px;
+    min-height: 90px;    
+}
+
+                                    /*BUTTONS ICONS*/
+.buttons{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100px;
+    margin: 0;
+    
+    min-width: 280px;
+    padding-bottom: 1em;
+}
+
+button{
+    background-color: #40f000;
+    border-style: none;   
+}
+
+#rock{
+    background: url("./images/rock-button.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    margin: auto;
+    height: 50px;   
+    width: 50px;         
+    
+    cursor: pointer;
+    display: block;
+    
+    z-index: 3;
+}
+
+#paper{
+    background: url("./images/paper-button.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    margin: auto;
+    height: 50px;   
+    width: 50px;         
+    
+    cursor: pointer;
+    display: block;
+    
+    z-index: 3;
+}
+
+#scissor{
+    background: url("./images/scissor-button.svg");    
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    
+    margin: auto;
+    height: 50px;   
+    width: 50px;         
+    
+    cursor: pointer;
+    display: block;
+    
+    z-index: 2;
+}
+
+#rock:hover{
+    background: url("./images/rock-button.svg"); 
+    background-color: #40f000; /* defines the background color of the image */
+    mask: url(./images/rock-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/rock-button.svg) no-repeat center / contain;
+}
+
+#scissor:hover{
+    background: url("./images/scissor-button.svg");   
+    background-color: #40f000; /* defines the background color of the image */
+    mask: url(./images/scissor-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/scissor-button.svg) no-repeat center / contain;
     
 }
 
-.buttons{
-    display: flex;
-    align-items: center;
-    height: 100px;
-    min-width: 280px;
+#paper:hover{
+    background: url("./images/scissor-button.svg");   
+    background-color: #40f000; /* defines the background color of the image */
+    mask: url(./images/paper-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/paper-button.svg) no-repeat center / contain;
 }
 
 
-/*----Media querries----*/
+.click-btn{
+    height: 55px;
+    width: 60px;
+    background-color: #40f000;
+    z-index: 2;
+    padding: 1px;
+    border-style: inset ;
+    border-color: #54ee1c;
+}
+
+.click-btn:hover{
+    background-color: black;
+    box-shadow: inset #54ee1c 0 0 20px 5px;
+}
+
+
+
+
+
+
+                                        /*----Media querries----*/
 
 @media screen and (max-height:740px) {
     .outer-container > .outer-1{
         height: 500px;
         flex-basis: 0;
     }
+
+   
 
     /* .outer-1 > .score-board {    
         
@@ -217,21 +365,32 @@ body{
 
     .buttons{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: center;
         width: 300px;
         height: 50px;
         margin: 0;
     }
 
+    .player-hand-right{
+        border-style: double;
+    }
+
+    .player-hand-left{
+        border-style: double;
+    }
+
     .score-board{
         position: relative;
-        top: -50px;
+        top: -10px;
+        border-style: solid;
     }
 
    
     body{
-        
+        height: auto;
         min-height: 500px;
+        padding: 0;
     }
 
     .outer-container{
@@ -254,12 +413,12 @@ body{
     .outer-1{
         min-width: 280px;
         min-height: 300px;
-        flex-direction: column;
+        flex-direction: column-reverse;
         min-height: 500px;
         gap: 1em;
         padding: 1em;
         border-width: 0.2;
-        padding-bottom: 3em;
+        padding-top: 3em;
         height: 700px;
     }    
 }

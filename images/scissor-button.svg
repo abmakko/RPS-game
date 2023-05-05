@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="800px" height="800px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.89px;}</style>
+  </defs>
+  <path class="cls-1" d="M 18.925 23.003 L 5.213 23.13 C 2.56 20.929 1.071 17.945 1.071 14.832 C 1.061 13.467 1.711 12.158 2.875 11.195 C 4.031 10.247 5.596 9.723 7.22 9.739 L 9.47 9.739 C 10.792 9.739 11.865 10.625 11.872 11.722 C 11.872 12.822 10.796 13.714 9.47 13.714 L 5.873 13.714" style="stroke-width: 1.3px;"/>
+  <path class="cls-1" d="M 5.873 13.714 L 6.307 13.862 C 9.66 14.985 11.862 17.682 11.872 20.684" style="stroke-width: 1.3px;"/>
+  <path class="cls-1" d="M 18.531 23.13 C 21.183 20.929 22.674 17.945 22.674 14.832" style="stroke-width: 1.3px;"/>
+  <path class="cls-1" d="M 4.375 10.28 L 2.774 3.16 C 2.55 2.078 3.416 1.05 4.716 0.851 C 4.857 0.84 4.996 0.84 5.137 0.851 C 6.294 0.85 7.286 1.532 7.5 2.474 L 9.063 9.855" style="stroke-width: 1.3px;"/>
+  <path class="cls-1" d="M 9.801 10.192 L 11.441 2.474 C 11.638 1.52 12.635 0.82 13.803 0.819 C 13.942 0.809 14.083 0.809 14.222 0.819 C 15.524 1.017 16.391 2.047 16.168 3.128 L 14.744 9.834" style="stroke-width: 1.3px;"/>
+  <rect class="cls-1" x="13.065" y="9.739" width="4.803" height="6.969" rx="1.89" style="stroke-width: 1.3px;"/>
+  <rect class="cls-1" x="17.871" y="10.731" width="4.803" height="5.978" rx="1.89" style="stroke-width: 1.3px;"/>
+</svg>
