@@ -92,6 +92,8 @@ h1{
     display: flex;
     height: 60%;
     position: absolute;
+    align-items: center;
+    justify-content: center;
     border-color: #40f000;
     border-width: 0.4em;
     border-style: solid;
@@ -117,6 +119,8 @@ h1{
     height: 60%;
     position: absolute;
     border-color: #40f000;
+    align-items: center;
+    justify-content: center;
     box-shadow:
     inset #91d877 0 0 0 5px, 
     inset #b6eea1 0 0 0 1px, 
@@ -151,19 +155,23 @@ h1{
     margin: auto;
     height: 70%;   
     width: 80%;         
-    display: none;
+    display: flex;
+    position: absolute;
+    transform: rotateY(90deg);
     z-index: 3;
 }
 
 #paper-left{
+    position: absolute;
     background: url("./images/paper-left.svg");    
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     margin: auto;
     height: 90%;   
     width: 80%;         
-    display: none;
+    display: flex;
     z-index: 3;
+    transform: rotateY(90deg);
 }
 
 #scissor-left{
@@ -171,10 +179,12 @@ h1{
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     margin: auto;
+    position: absolute;
     height: 90%;   
     width: 80%;         
-    display: none;
+    display: flex;
     z-index: 3;
+    transform: rotateY(90deg);
 }
 
                                 /*----COMPUTER RIGHT-HAND IMAGES----*/
@@ -186,9 +196,10 @@ h1{
     margin: auto;
     height: 70%;   
     width: 80%;         
-    display: none;
-    
+    display: flex;
+    position: absolute;    
     z-index: 3;
+    transform: rotateY(90deg);
 }
 
 #paper-right{
@@ -198,7 +209,9 @@ h1{
     margin: auto;
     height: 90%;   
     width: 80%;         
-    display: none;
+    display: flex;
+    position: absolute;
+    transform: rotateY(90deg);
     z-index: 3;
 }
 
@@ -209,22 +222,26 @@ h1{
     margin: auto;
     height: 90%;   
     width: 80%;         
-    display: none;
+    display: flex;
+    position: absolute;
+    transform: rotateY(90deg);
     z-index: 3;
 }
 
 /*=========----------------------------------------=====Animations-right side*/
 
 .animate_1{
-    display: flex;
+    
     animation: rotateR 500ms 8 alternate;
 }
 
 @keyframes rotateR {
     0%{
+        transform: rotateY(0deg);
         rotate: 0;
     }
     100%{
+        transform: rotateY(0deg);
         rotate:45deg;
     }
 }
@@ -238,9 +255,11 @@ h1{
 
 @keyframes rotateL {
     0%{
+        transform: rotateY(0deg);
         rotate: 0;
     }
     100%{
+        transform: rotateY(0deg);
         rotate:-45deg;
     }
 }

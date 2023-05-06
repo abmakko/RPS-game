@@ -58,51 +58,58 @@ function gameState_1(){
 
     switch(player_option){
         case 1:
-            rock_leftSide.style.display = "flex";
-            scissor_leftSide.style.display = "none";
-            paper_leftSide.style.display = "none";            
+            rock_leftSide.style.transform = "rotateY(0deg)";
+            scissor_leftSide.style.transform = "rotateY(90deg)";
+            paper_leftSide.style.transform = "rotateY(90deg)";            
             break;
         case 2:
-            paper_leftSide.style.display = "flex";
-            rock_leftSide.style.display = "none";
-            scissor_leftSide.style.display = "none";            
+            paper_leftSide.style.transform = "rotateY(0deg)"; 
+            rock_leftSide.style.transform = "rotateY(90deg)";
+            scissor_leftSide.style.transform = "rotateY(90deg)";                      
             break;
         case 3:
-            scissor_leftSide.style.display = "flex";
-            rock_leftSide.style.display = "none";        
-            paper_leftSide.style.display = "none";            
+            scissor_leftSide.style.transform = "rotateY(0deg)";  
+            paper_leftSide.style.transform = "rotateY(90deg)"; 
+            rock_leftSide.style.transform = "rotateY(90deg)";                     
             break;
     }
 
     switch(computerChoice){
         case 1:
-            rock_rightSide.style.display = "flex";
-            scissor_rightSide.style.display = "none";
-            paper_rightSide.style.display = "none";
+            rock_rightSide.style.transform = "rotateY(0deg)";
+            scissor_rightSide.style.transform = "rotateY(90deg)";
+            paper_rightSide.style.transform = "rotateY(90deg)";
             
             break;
         case 2:
-            paper_rightSide.style.display = "flex";
-            rock_rightSide.style.display = "none";
-            scissor_rightSide.style.display = "none";            
+            paper_rightSide.style.transform = "rotateY(0deg)"; 
+            rock_rightSide.style.transform = "rotateY(90deg)";
+            scissor_rightSide.style.transform = "rotateY(90deg)";
+                      
             break;
         case 3:
-            scissor_rightSide.style.display = "flex";
-            rock_rightSide.style.display = "none";        
-            paper_rightSide.style.display = "none";            
+            scissor_rightSide.style.transform = "rotateY(0deg)";
+            paper_rightSide.style.transform = "rotateY(90deg)"; 
+            rock_rightSide.style.transform = "rotateY(90deg)";
+                       
             break;
     }   
+}
+
+function clear_box(){
+    scissor_rightSide.style.transform = "rotateY(90deg)";
+    paper_rightSide.style.transform = "rotateY(90deg)"; 
+    rock_rightSide.style.transform = "rotateY(90deg)";
+
+    scissor_leftSide.style.transform = "rotateY(90deg)";  
+    paper_leftSide.style.transform = "rotateY(90deg)"; 
+    rock_leftSide.style.transform = "rotateY(90deg)";   
 }
 
 function anim_1(){ 
     count_container.style.display = "flex";
     Array.from(counter).forEach(element => element.classList.add("number"));
-    rock_leftSide.style.display = "flex";
-    rock_rightSide.style.display = "flex";
-    paper_leftSide.style.display = "none";
-    paper_rightSide.style.display = "none";
-    scissor_leftSide.style.display = "none";
-    scissor_rightSide.style.display = "none";
+    clear_box();
     rock_leftSide.classList.add("animate_2");
     rock_rightSide.classList.add("animate_1");
 }
