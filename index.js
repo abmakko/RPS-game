@@ -7,8 +7,34 @@ let computer_option = '';
 let count = 0;
 let draw_counter = 0;
 
-let message = '';
+let messages = '';
 
+let rock_event = document.getElementById("rock");
+let paper_event = document.getElementById("paper");
+let scissor_event = document.getElementById("scissor");
+
+rock_event.addEventListener('click', init_animation);
+paper_event.addEventListener('click', init_animation);
+scissor_event.addEventListener('click', init_animation);
+
+let count_container = document.getElementById("message");
+let counter = document.getElementsByClassName("slides");
+let rock_rightSide = document.getElementById("rock-right");
+let rock_leftSide = document.getElementById("rock-left");
+
+function anim_1(){ 
+    count_container.style.display = "flex";
+    Array.from(counter).forEach(element => element.classList.add("number"));
+    rock_leftSide.style.display = "flex";
+    rock_rightSide.style.display = "flex";
+    rock_leftSide.className += " animate_2";
+    rock_rightSide.className += " animate_1";
+}
+
+function init_animation(){
+    console.log('button pressed');
+    anim_1();
+}
 
 let computerChoice = Math.floor(Math.random() * 3) + 1;
 

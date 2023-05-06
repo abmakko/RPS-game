@@ -204,8 +204,41 @@ h1{
     z-index: 3;
 }
 
-.player-tag { 
+/*=========----------------------------------------=====Animations-right side*/
+
+.animate_1{
     display: flex;
+    animation: rotateR 500ms 8 alternate;
+}
+
+@keyframes rotateR {
+    0%{
+        rotate: 0;
+    }
+    100%{
+        rotate:45deg;
+    }
+}
+
+
+/* ----------=====================================*Animations-left side*/
+.animate_2{
+    display: flex;
+    animation: rotateL 500ms 8 alternate;
+}
+
+@keyframes rotateL {
+    0%{
+        rotate: 0;
+    }
+    100%{
+        rotate:-45deg;
+    }
+}
+
+
+.player-tag { 
+    display: none;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -214,7 +247,7 @@ h1{
 }
 
 .computer-tag{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -226,9 +259,11 @@ h1{
                                 /*----Middle Prompt message Properties----*/
 .prompt{
     
+    position: relative;
     display: flex;
-    border-color: #40f000;
-    border-width: 0.3em;
+    align-items: center;
+    justify-content: center;
+    
     border-style: solid;   
     width: 50%;
     left: 0;
@@ -238,6 +273,52 @@ h1{
     min-width: 100px;
     min-height: 90px;    
 }
+
+
+                                    /*Prompt animations*/
+
+#message{
+    display: none;
+}
+
+.countdown .number{
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(270deg);
+    animation: animate 4000ms linear;
+}
+
+.countdown .number:nth-child(1){
+    animation-delay: 1000ms;
+}
+
+.countdown .number:nth-child(2){
+    animation-delay: 2000ms;
+}
+
+.countdown .number:nth-child(3){
+    animation-delay: 3000ms;
+}
+
+@keyframes animate {
+    0% {
+      transform: rotateY(90deg);
+    }
+    
+    10%, 100% {
+      transform: rotateY(-90deg);
+    }
+  }
+
+
+
 
                                     /*BUTTONS ICONS*/
 .buttons{
@@ -299,14 +380,14 @@ button{
     z-index: 2;
 }
 
-#rock:hover{
+#rock:active{
     background: url("./images/rock-button.svg"); 
     background-color: #40f000; /* defines the background color of the image */
     mask: url(./images/rock-button.svg) no-repeat center / contain;
     -webkit-mask: url(./images/rock-button.svg) no-repeat center / contain;
 }
 
-#scissor:hover{
+#scissor:active{
     background: url("./images/scissor-button.svg");   
     background-color: #40f000; /* defines the background color of the image */
     mask: url(./images/scissor-button.svg) no-repeat center / contain;
@@ -314,7 +395,7 @@ button{
     
 }
 
-#paper:hover{
+#paper:active{
     background: url("./images/scissor-button.svg");   
     background-color: #40f000; /* defines the background color of the image */
     mask: url(./images/paper-button.svg) no-repeat center / contain;
@@ -332,11 +413,14 @@ button{
     border-color: #54ee1c;
 }
 
-.click-btn:hover{
+.click-btn:hover{    
+    box-shadow: inset #b8f192 0 0 10px 5px;
+}
+
+.click-btn:active{
     background-color: black;
     box-shadow: inset #54ee1c 0 0 20px 5px;
 }
-
 
 
 
@@ -361,7 +445,15 @@ button{
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:600px) {   
+    
+    .click-btn:hover{
+        box-shadow: none;
+    }
+    
+    .outer-1 .prompt{
+        position: relative;
+    }
 
     .buttons{
         display: flex;
@@ -420,5 +512,10 @@ button{
         border-width: 0.2;
         padding-top: 3em;
         height: 700px;
+        box-shadow:    
+            inset #91d877 0 0 0 5px, 
+            inset #b6eea1 0 0 0 1px, 
+            inset #98f078 0 0 0 10px, 
+            inset #8cf566 0 0 15px 15px; 
     }    
 }
