@@ -135,6 +135,15 @@ h1{
 }
 
                      /*----Player LEFT IMAGES----*/
+
+.hand-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
 #rock-left{
     background: url("./images/rock-left.svg");    
     background-repeat: no-repeat;
@@ -237,8 +246,8 @@ h1{
 }
 
 
-.player-tag { 
-    display: none;
+.tag { 
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -246,14 +255,6 @@ h1{
     width: 100%;
 }
 
-.computer-tag{
-    display: none;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0;
-    width: 100%;
-}
 
 
                                 /*----Middle Prompt message Properties----*/
@@ -265,13 +266,19 @@ h1{
     justify-content: center;
     
     border-style: solid;   
-    width: 50%;
+    
     left: 0;
     right: 0;
     margin-left: auto; 
     margin-right: auto; 
     min-width: 100px;
     min-height: 90px;    
+}
+
+#prompter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -325,25 +332,36 @@ h1{
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    height: 100px;
-    margin: 0;
+    min-height: 50px;
+    margin: auto;
+    border-color: #54ee1c;
+    border-left-width: 0.5em;
+    border-right-width: 0.5em;
+    border-bottom-width: 0.5em;
+    border-style: solid;
+    min-width: 80px;
     
-    min-width: 280px;
-    padding-bottom: 1em;
 }
 
 button{
     background-color: #40f000;
+    display: flex;
+    align-items: center;
     border-style: none;   
+    margin: auto;
 }
 
 #rock{
-    background: url("./images/rock-button.svg");    
+    
+    background-color: #bbfcb8; /* defines the background color of the image */
+    mask: url(./images/rock-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/rock-button.svg) no-repeat center / contain;   
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     margin: auto;
     height: 50px;   
-    width: 50px;         
+    width: 50px;        
+    box-shadow: #bffaaa 0 0 2px 15px; 
     
     cursor: pointer;
     display: block;
@@ -351,8 +369,10 @@ button{
     z-index: 3;
 }
 
-#paper{
-    background: url("./images/paper-button.svg");    
+#paper{      
+    background-color: #bbfcb8; /* defines the background color of the image */
+    mask: url(./images/paper-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/paper-button.svg) no-repeat center / contain;  
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     margin: auto;
@@ -366,7 +386,10 @@ button{
 }
 
 #scissor{
-    background: url("./images/scissor-button.svg");    
+     
+    background-color: #bbfcb8; /* defines the background color of the image */
+    mask: url(./images/scissor-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/scissor-button.svg) no-repeat center / contain;   
     background-repeat: no-repeat;
     background-size: 100% 100%; 
     
@@ -415,6 +438,7 @@ button{
 
 .click-btn:hover{    
     box-shadow: inset #b8f192 0 0 10px 5px;
+    cursor: not-allowed;
 }
 
 .click-btn:active{
@@ -459,9 +483,9 @@ button{
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        width: 300px;
+        min-width: 50px;
         height: 50px;
-        margin: 0;
+        margin: auto;
     }
 
     .player-hand-right{

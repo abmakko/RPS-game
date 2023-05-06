@@ -13,10 +13,10 @@
     <div class= "outer-container">
     <div class ="outer-1">
         <div class="score-board">
-            <h1><span class="player-score">0</span> : <span class="computer-score">0</span> </h1>
+            <h1><span id="player-score">0</span> : <span id="computer-score">0</span> </h1>
         </div>
         <div class=" hands player-hand-left">
-            <div class="player-tag"><h1>YOU</h1></div>
+            <div class="tag"><h1>YOU</h1></div>
             <div id="rock-left"></div>
             <div id="paper-left"></div>
             <div id="scissor-left"></div>
@@ -35,10 +35,13 @@
                   <h1>Scissor</h1>
                 </div>
             </div>
+            <div id ="prompter">
+                    <h1><span id="prompt-text">VS</span></h1>
+                </div>
 
         </div>
         <div class="hands player-hand-right">
-            <div class="computer-tag"><h1>CPU</h1></div>
+            <div class="tag"><h1>CPU</h1></div>
             <div id="rock-right"></div>
             <div id="paper-right"></div>
             <div id="scissor-right"></div>
