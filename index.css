@@ -428,8 +428,11 @@ button{
 }
 
 #rock{
-    background: url(./images/rock-button.svg);   
       
+    background-color: #0e3300; /* defines the background color of the image */
+    mask: url(./images/rock-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/rock-button.svg) no-repeat center / contain;
+    
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     margin: auto;
@@ -444,7 +447,9 @@ button{
 }
 
 #paper{      
-    background: url(./images/paper-button.svg);       
+    background-color: #0e3300; /* defines the background color of the image */
+    mask: url(./images/paper-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/paper-button.svg) no-repeat center / contain;       
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     margin: auto;
@@ -458,7 +463,9 @@ button{
 }
 
 #scissor{
-    background: url(./images/scissor-button.svg);   
+    background-color: #0e3300; /* defines the background color of the image */
+    mask: url(./images/scissor-button.svg) no-repeat center / contain;
+    -webkit-mask: url(./images/scissor-button.svg) no-repeat center / contain;  
     background-repeat: no-repeat;
     background-size: 100% 100%; 
     
