@@ -44,7 +44,7 @@ const prompt_msg = document.getElementById("prompt-text");
 const hand_boxL = document.getElementsByClassName("player-hand-left");
 const hand_boxR = document.getElementsByClassName("player-hand-right");
 
-
+const final_prompt = document.getElementById("prompter");
 const final_score = document.getElementsByClassName("score-board");
 
 const final_playerScore = document.getElementById("player-score");
@@ -71,7 +71,7 @@ function reset_Game(){
     Array.from(tags).forEach(element => element.style.display = 'flex'); 
     Array.from(hand_boxL).forEach(element => element.id = ""); 
     Array.from(hand_boxR).forEach(element => element.id = "");
-    
+    final_prompt.classList.remove("final-display");
     playerScore.textContent = player_win_tally;
     computerScore.textContent = computer_win_tally;
     prompt_msg.textContent = messages;
@@ -147,6 +147,7 @@ function gameState_1(){
         Array.from(final_score).forEach(element => element.id = "");
         Array.from(button_group).forEach(element => element.disabled = true);
         resetBtnContainter.style.display = "flex";
+        final_prompt.classList.add("final-display");
     }
     else if(computer_win_tally === 5){
         Array.from(button_group).forEach(element => element.disabled = true);
@@ -154,6 +155,7 @@ function gameState_1(){
         Array.from(final_score).forEach(element => element.id = "lose-box");
         final_playerScore.style.color = "red";
         resetBtnContainter.style.display = "flex";
+        final_prompt.classList.add("final-display");
     }
 }
 
