@@ -64,12 +64,10 @@ body{
 	  inset #91d877 0 0 0 5px, 
     inset #b6eea1 0 0 0 1px, 
     inset #54ee1c 0 0 30px 10px;
-    left: 0; 
-    right: 0;
+    
     top:-30px; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 150px;
+    margin: auto;
+    min-width: 150px;
     height: 70px;
     background-color: black;
     z-index: 1;
@@ -109,6 +107,15 @@ h1{
     background-color: black;
     z-index: 1;
 
+}
+
+
+
+#lose-box{
+    box-shadow:
+    inset #df2020 0 0 0 5px, 
+    inset #fa3f3f 0 0 0 1px, 
+    inset #ff2c59 0 0 30px 10px;
 }
 
 
@@ -359,6 +366,7 @@ h1{
     border-bottom-width: 0.5em;
     border-style: solid;
     min-width: 80px;
+    position: relative;
     
 }
 
@@ -370,17 +378,64 @@ button{
     margin: auto;
 }
 
-#rock{
+#new-game{
     
-    background-color: #bbfcb8; /* defines the background color of the image */
-    mask: url(./images/rock-button.svg) no-repeat center / contain;
-    -webkit-mask: url(./images/rock-button.svg) no-repeat center / contain;   
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    margin: auto;
+    justify-content: center;
+    position: absolute;
+    border-style: solid;
+    border-color: #7ce955;
+    border-width: 0.3em;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    display: none;
+    
+}
+
+#start{
+    position: relative;
+    background-color: rgb(6, 66, 29);
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: #9dec80;
+    border-width: 0.2em;
+    z-index: 4;
+    
+    box-shadow: inset #64ca20 0 0 10px 5px;
+    font-family: 'VT323', monospace;
+    cursor: pointer;
+}
+
+
+
+#start:hover h1{
+    color: #bff5ad;
+}
+
+#start:active h1{
+    color: white;
+}
+
+#start:active, #new-game{
+    
+    box-shadow: #f2f3f1 0 0 10px 5px;
+}
+
+#rock{
+    background: url(./images/rock-button.svg);   
+      
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     margin: auto;
     height: 50px;   
     width: 50px;        
-    box-shadow: #bffaaa 0 0 2px 15px; 
+    
     
     cursor: pointer;
     display: block;
@@ -389,9 +444,7 @@ button{
 }
 
 #paper{      
-    background-color: #bbfcb8; /* defines the background color of the image */
-    mask: url(./images/paper-button.svg) no-repeat center / contain;
-    -webkit-mask: url(./images/paper-button.svg) no-repeat center / contain;  
+    background: url(./images/paper-button.svg);       
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     margin: auto;
@@ -405,10 +458,7 @@ button{
 }
 
 #scissor{
-     
-    background-color: #bbfcb8; /* defines the background color of the image */
-    mask: url(./images/scissor-button.svg) no-repeat center / contain;
-    -webkit-mask: url(./images/scissor-button.svg) no-repeat center / contain;   
+    background: url(./images/scissor-button.svg);   
     background-repeat: no-repeat;
     background-size: 100% 100%; 
     
@@ -446,12 +496,13 @@ button{
 
 
 .click-btn{
-    height: 55px;
-    width: 60px;
+    min-height: 60px;
+    width: auto;
     background-color: #40f000;
     z-index: 2;
-    padding: 1px;
-    border-style: inset ;
+    padding: 2px;
+    margin: auto;
+    border-style: outset ;
     border-color: #54ee1c;
 }
 
@@ -503,8 +554,10 @@ button{
         align-items: flex-start;
         justify-content: center;
         min-width: 50px;
-        height: 50px;
+        min-height: 70px;
         margin: auto;
+        border-color: #54ee1c;
+        
     }
 
     .player-hand-right{
@@ -526,6 +579,7 @@ button{
         height: auto;
         min-height: 500px;
         padding: 0;
+        min-width: 250px;
     }
 
     .outer-container{

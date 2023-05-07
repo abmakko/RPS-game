@@ -1,3 +1,4 @@
+
 let player_choice = '';
 let player_option = 0;
 
@@ -40,17 +41,49 @@ const tags = document.getElementsByClassName("tag");
 
 const prompt_msg = document.getElementById("prompt-text");
 
+const hand_boxL = document.getElementsByClassName("player-hand-left");
+const hand_boxR = document.getElementsByClassName("player-hand-right");
+
+const alert_box = document.getElementById("prompter");
+const final_score = document.getElementsByClassName("score-board");
+
+const final_playerScore = document.getElementById("player-score");
+
 rock_rightSide.addEventListener('animationend', gameState_1);
 
+const reset_Button = document.getElementById("start");
+const resetBtnContainter = document.getElementById("new-game")
+
+reset_Button.addEventListener('click', reset_Game);
+
 let computerChoice = Math.floor(Math.random() * 3) + 1;
+
+function reset_Game(){
+    Array.from(button_group).forEach(element => element.disabled = false); 
+    resetBtnContainter.style.display = "none";
+    player_win_tally = 0;
+    computer_win_tally = 0;
+    messages = "VS"
+    alert_box.textContent = messages;
+    final_playerScore.style.color = "#40f000";
+    clear_box();
+    Array.from(tags).forEach(element => element.style.display = 'flex'); 
+    Array.from(hand_boxL).forEach(element => element.id = ""); 
+    Array.from(hand_boxR).forEach(element => element.id = "");
+    
+    playerScore.textContent = player_win_tally;
+    computerScore.textContent = computer_win_tally;
+    prompt_msg.textContent = messages;
+}
 
 function gameState_1(){
     playerScore.textContent = player_win_tally;
     computerScore.textContent = computer_win_tally;
     prompt_msg.textContent = messages;
-    console.log(messages);    
+        
     Array.from(button_group).forEach(element => element.disabled = false);  
     Array.from(counter).forEach(element => element.classList.remove("number")); 
+
     rock_leftSide.classList.remove("animate_2");
     rock_rightSide.classList.remove("animate_1");
     count_container.style.display = "none";
@@ -94,6 +127,33 @@ function gameState_1(){
                        
             break;
     }   
+
+    if(computer_win_tally > player_win_tally){        
+        Array.from(hand_boxL).forEach(element => element.id = "lose-box");
+        Array.from(hand_boxR).forEach(element => element.id = "");
+    }
+    else if(player_win_tally > computer_win_tally){
+        Array.from(hand_boxR).forEach(element => element.id = "lose-box");
+        Array.from(hand_boxL).forEach(element => element.id = "");        
+    }
+    else{
+        Array.from(hand_boxL).forEach(element => element.id = ""); 
+        Array.from(hand_boxR).forEach(element => element.id = "");
+    }
+
+    if(player_win_tally === 5){
+        alert_box.innerHTML = "<h1>CONGRATS</h1>"
+        Array.from(final_score).forEach(element => element.id = "");
+        Array.from(button_group).forEach(element => element.disabled = true);
+        resetBtnContainter.style.display = "flex";
+    }
+    else if(computer_win_tally === 5){
+        Array.from(button_group).forEach(element => element.disabled = true);
+        alert_box.innerHTML = "<h1>YOU LOSE</h1>"
+        Array.from(final_score).forEach(element => element.id = "lose-box");
+        final_playerScore.style.color = "red";
+        resetBtnContainter.style.display = "flex";
+    }
 }
 
 function clear_box(){
@@ -116,6 +176,7 @@ function anim_1(){
 
 function init_animation(e){
     prompt_msg.innerHTML = '';
+    final_playerScore.style.color = "#40f000";
     computerChoice = Math.floor(Math.random() * 3) + 1;
     Array.from(button_group).forEach(element => element.disabled = true);
     Array.from(tags).forEach(element => element.style.display = 'none');    
@@ -184,131 +245,3 @@ function init_animation(e){
 }
 
 
-
-
-function game_logic(){    
-
-        while((player_choice !== "rock") && (player_choice !== "paper") && (player_choice !== "scissor") && (player_choice !== "scissors")){
-            player_choice = prompt(`Rock, paper, scissor, This a Round Number ${count}, Please enter the appropriate Options`);
-            player_choice = player_choice.toLowerCase();
-            player_choice = String(player_choice);
-                        
-        }
-
-        
-
-        switch(player_choice){
-
-            case 'rock': 
-                player_option = 1;
-                if(computerChoice === 1 && player_option === 1){
-                    computer_option = "rock";
-                    prompt(`Computer choose ${computer_option}! That was a draw`, "Press Okay to continue");
-                    message = "This is a draw";
-                    draw_counter++;
-                }
-                else if (computerChoice === 2){
-                    computer_option = "paper";
-                    prompt(`Computer choose ${computer_option}! You lost that round, Press Okay to continue`, "Press Okay to continue");
-                    message = "You lose";
-                    computer_win_tally++;
-                }
-                else if(computerChoice === 3){
-                    computer_option = "scissor";
-                    prompt(`Computer choose ${computer_option}! You won that round, Press Okay to continue`, "Press Okay to continue");
-                    message = "you win this round";
-                    player_win_tally++;
-                }
-
-                break;
-            
-            case 'papper':
-            case 'paper':
-                player_option = 2;
-                if(computerChoice === 2 && player_option === 2){
-                    computer_option = "paper";
-                    prompt(`Computer choose ${computer_option}! That was a draw, Press Okay to continue`, "Press Okay to continue");
-                    message = "This is a draw";
-                    draw_counter++;
-                }
-                else if(computerChoice === 1){
-                    computer_option = "rock";
-                    prompt(`Computer choose ${computer_option}! You won that round, Press Okay to continue`, "Press Okay to continue");
-                    message = "You win this round";
-                    player_win_tally++;
-                }
-                else if(computerChoice === 3){
-                    computer_option = "scissor";
-                    prompt(`Computer choose ${computer_option}! You lost that Round! press okay continue`, "Press Okay to continue");
-                    message = "You lose this round";
-                    computer_win_tally++
-                }
-
-                break;
-
-            case 'scissors':
-            case 'scissor':
-                player_option = 3;
-                if(computerChoice === 3 && player_option === 3){
-                    computer_option = "scissor";
-                    prompt(`Computer choose ${computer_option}! That was a draw`, "Press Okay to continue");                    
-                    message = "This is a draw";
-                    draw_counter++;
-                }
-                else if (computerChoice === 1){
-                    computer_option = "rock";
-                    prompt(`Computer choose ${computer_option}! You lost that round, Press Okay to continue`, "Press Okay to continue");
-                    message = "You lose this round";
-                    computer_win_tally++;
-                }
-                else if(computerChoice === 2){
-                    computer_option = "paper";
-                    prompt(`Computer choose ${computer_option}! You won that round, Press Okay to continue`, "Press Okay to continue");
-                    message = "You win this round";
-                    player_win_tally++;
-                }
-                break;
-
-            default: {prompt("something seriously went wrong");}
-        }
-}
-
-function game_play(){
-
-    for(i = 0; i < 5; i++){        
-        player_choice = '';
-        player_option = 0;
-        message = '';
-        computer_option = '';
-        computerChoice = Math.floor(Math.random() * 3) + 1;
-        count ++;
-
-        game_logic();
-    }
-    count = 0;
-
-    if(player_win_tally > computer_win_tally){
-        if(draw_counter > 0){
-            prompt(`You won the match with a total of ${player_win_tally} rounds, Computer had ${computer_win_tally} rounds, There was ${draw_counter} draw-matches`,  "Press Okay to Finish");
-        }
-        else{
-            prompt(`You won the match with a total of ${player_win_tally} rounds, Computer had ${computer_win_tally} rounds`,  "Press Okay to Finish");
-        }
-    }
-    else if(player_win_tally < computer_win_tally){
-        if(draw_counter > 0){
-            prompt(`You lost the match with a total of ${player_win_tally} rounds, Computer won ${computer_win_tally} rounds, There was ${draw_counter} draw-matches`,  "Press Okay to Finish");
-        }
-        else{
-            prompt(`You lost the match with a total of ${player_win_tally} rounds, Computer won ${computer_win_tally} rounds`,  "Press Okay to Finish");
-        }
-    }
-    else {
-        prompt(`It was a Tie, You won ${player_win_tally} rounds, Computer won ${computer_win_tally} rounds, There was ${draw_counter} draw-matches`,  "Press Okay to Finish")
-    }
-
-    console.log(`Player score : ${player_win_tally}`);
-    console.log(`Computer score : ${computer_win_tally}`);
-}
-
-//game_play();
