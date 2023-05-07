@@ -44,7 +44,7 @@ const prompt_msg = document.getElementById("prompt-text");
 const hand_boxL = document.getElementsByClassName("player-hand-left");
 const hand_boxR = document.getElementsByClassName("player-hand-right");
 
-const alert_box = document.getElementById("prompter");
+
 const final_score = document.getElementsByClassName("score-board");
 
 const final_playerScore = document.getElementById("player-score");
@@ -64,7 +64,7 @@ function reset_Game(){
     player_win_tally = 0;
     computer_win_tally = 0;
     messages = "VS"
-    alert_box.textContent = messages;
+    
     final_playerScore.style.color = "#40f000";
     clear_box();
     Array.from(tags).forEach(element => element.style.display = 'flex'); 
@@ -142,14 +142,14 @@ function gameState_1(){
     }
 
     if(player_win_tally === 5){
-        alert_box.innerHTML = "<h1>CONGRATS</h1>"
+        prompt_msg.textContent = "CONGRATS"
         Array.from(final_score).forEach(element => element.id = "");
         Array.from(button_group).forEach(element => element.disabled = true);
         resetBtnContainter.style.display = "flex";
     }
     else if(computer_win_tally === 5){
         Array.from(button_group).forEach(element => element.disabled = true);
-        alert_box.innerHTML = "<h1>YOU LOSE</h1>"
+        prompt_msg.textContent = "YOU LOSE"
         Array.from(final_score).forEach(element => element.id = "lose-box");
         final_playerScore.style.color = "red";
         resetBtnContainter.style.display = "flex";
