@@ -64,7 +64,8 @@ function reset_Game(){
     player_win_tally = 0;
     computer_win_tally = 0;
     messages = "VS"
-    
+    Array.from(final_score).forEach(element => element.id = "");
+
     final_playerScore.style.color = "#40f000";
     clear_box();
     Array.from(tags).forEach(element => element.style.display = 'flex'); 
